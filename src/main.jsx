@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './assets/css/style.css'
+import './assets/css/Login.css'
+import './assets/css/Register.css'
 import { ThemeProvider } from './components/theme-provider'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

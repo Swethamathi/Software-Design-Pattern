@@ -1,151 +1,47 @@
-// export default function App() {
-//     return (
-//       <h1 className="text-3xl font-bold underline">
-//         Hello world!
-//       </h1>
-//     )
-//   }
-import React from "react";
-import { Button } from "@/components/ui/button"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { ModeToggle } from "./components/mode-toggle";
-import GridPattern from "./components/magicui/animated-grid-pattern";
- 
-const App =()=>{
+
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Shared/Home'
+import Login from './pages/Shared/Login'
+import Register from './pages/Shared/Register'
+import UserLayout from './layout/UserLayout'
+import UserDashboard from './pages/User/UserDashboard'
+import AdminLayout from './layout/AdminLayout'
+import AdminDashboard from './pages/Admin/AdminDashboard'
+import NotFound from './pages/Shared/NotFound'
+import HomeLayout from './layout/HomeLayout'
+import AdminUsers from './pages/Admin/AdminUsers'
+
+
+
+
+const App = () => {
     return (
-      <>
-      <GridPattern/>
-      <div className="h-screen w-screen flex justify-center items-center">
-      <ModeToggle />
+        <>
+            <BrowserRouter>
+                <Routes>
+                    <Route element={<HomeLayout />}>
+                        <Route path='/' element={<Home />} />
+                        <Route path='/login' element={<Login />} />
+                        <Route path='/register' element={<Register />} />
+                    </Route>
 
-      <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">Login</Button>
-      </DialogTrigger>
-      
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-       
-        <DialogTitle>WELCOME BACK!</DialogTitle>
-       
-          <DialogTitle>Please enter your details</DialogTitle>
-          {/* <DialogDescription>
-            Enter the UserName & Password
-          </DialogDescription> */}
-        </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Username
-            </Label>
-            <Input
-              id="name"
-              placeholder="Email or Username"
-              className="col-span-3"
-              />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Password
-            </Label>
-            <Input
-              id="username"
-             placeholder="Enter your password"
-              className="col-span-3"
-              />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-5">
-            <Label htmlFor="remember" className="text-right">
-              Remember Me
-            </Label>
-            <Input
-              id="remember"
-              type="checkbox"
-              className="col-span-1"
-            />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-5">
-          <Label htmlFor="remember" className="text-left">
-              Forgot Password?
-            </Label>
-            {/* <Input
-              id="remember"
-              type="line"
-              className="col-span-1"
-            /> */}
-          </div>
-        </div>
-        <DialogFooter>
-          <Button type="submit">SignIn</Button>
-          
-         
-        </DialogFooter>
-      </DialogContent>
-    </Dialog> 
-     <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">Register</Button>
-      </DialogTrigger>
+                    <Route element={<UserLayout />}>
+                        <Route path='/dashboard' element={<UserDashboard />} />
+                    </Route>
 
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Register Here!</DialogTitle>
-          {/* <DialogDescription>
-            Enter your Username, Password, and Email
-          </DialogDescription> */}
-        </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-             Name
-            </Label>
-            <Input
-              id="username"
-              placeholder="Enter your name"
-              className="col-span-3"
-            />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="email" className="text-right">
-             City
-            </Label>
-            <Input
-              id="city"
-              type="text"
-              className="col-span-3"
-            />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="password" className="text-right">
-             Country
-            </Label>
-            <Input
-              id="name"
-              type="text"
-         
-              className="col-span-3"
-            />
-          </div>
-          
-        </div>
-        <DialogFooter>
-          <Button type="submit">Register Now</Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
-              </div>
-              </>
-      )
+                    <Route element={<AdminLayout />}>
+                        <Route path='/admin/dashboard' element={<AdminDashboard />} />
+                        <Route path='/admin/users' element={<AdminUsers />} />
+                    </Route>
 
+                    <Route path='*' element={<NotFound />} />
+                </Routes>
+            </BrowserRouter>
+
+
+        </>
+    )
 }
-export default App;
+
+export default App
