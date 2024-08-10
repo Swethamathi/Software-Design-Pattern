@@ -1,249 +1,336 @@
-import GridPattern from '@/components/magicui/animated-grid-pattern'
-import React from 'react'
-import { cn } from "@/lib/utils";
-import { BorderBeam } from '@/components/magicui/border-beam';
+// import React from 'react';
+// import WordFadeIn from "@/components/magicui/word-fade-in";
+
+// const Home = () => {
+//   const InterviewCard = ({ name, title, image }) => (
+//     <div className="rounded-lg shadow-lg overflow-hidden">
+//       <img src={image} alt={name} className="w-full h-48 object-cover" />
+//       <div className="p-4">
+//         <h3 className="text-lg font-semibold">{name}</h3>
+//         <p className="text-gray-600">{title}</p>
+//       </div>
+//     </div>
+//   );
+// const interviews = [
+//   {
+//     name: 'Little Red Riding Hood',
+//     title: 'Little Red Riding Hood is a European fairy tale about a young girl and a sly wolf.',
+//     image: 'https://ik.imagekit.io/SrinivasanRavi/Home/LittleInn/Home-Tales/Little%20Red%20Riding%20Hood.webp',
+//   },
+//   {
+//     name: 'Beauty and the Beast.',
+//     title: 'Originating in France, this is the story of Belle, a beautiful peasant girl ',
+//     image: 'https://ik.imagekit.io/SrinivasanRavi/Home/LittleInn/Home-Tales/Beauty%20and%20the%20Beast.jpg',
+//   },
+//   {
+//     name: 'The Frog Prince',
+//     title: 'The Frog Prince; or, Iron Henry" is a German fairy tale ',
+//     image: 'https://ik.imagekit.io/SrinivasanRavi/Home/LittleInn/Home-Tales/The%20Frog%20Prince.jpg?updatedAt=1722176812593',
+//   },
+//   {
+//     name: 'Cinderella',
+//     title: '"Cinderella", or "The Little Glass Slipper", is a folk tale with thousands of variants that are told throughout the world. ',
+//     image: 'https://ik.imagekit.io/SrinivasanRavi/Home/LittleInn/Home-Tales/Cinderella.jpeg',
+//   },
+//   {
+//     name: 'Snow White',
+//     title: '"Snow White" is a German fairy tale, first written down in the early 19th century. ',
+//     image: 'https://ik.imagekit.io/SrinivasanRavi/Home/LittleInn/Home-Tales/Snow%20White.webp',
+//   },
+//   {
+//     name: 'Jack and the Beanstalk',
+//     title: 'Jack and the Beanstalk" is an English fairy tale. It appeared as "The Story of Jack Spriggins and the Enchanted Bean',
+//     image: 'https://ik.imagekit.io/SrinivasanRavi/Home/LittleInn/Home-Tales/Jack%20and%20the%20Beanstalk.jpg',
+//   },
+// ];
+//   return (
+//     <>
+//     <hr></hr>
+//       <section
+//         id="home"
+//         className="flex flex-col items-center justify-center py-12 relative h-screen w-screen bg-cover bg-center"
+//         style={{
+//           backgroundImage:
+//             "url('https://ik.imagekit.io/SrinivasanRavi/Home/LittleInn/LittleInn%20Home%20Bg.jpg?updatedAt=1722141348095')",
+//           backgroundSize: "cover", 
+//           backgroundPosition: "center",
+//         }}
+//       >
+//         <WordFadeIn words="Little Inn..." />
+//         <br />
+//         <h1 className="text-2xl text-center font-bold">
+//           Explore a World of Wonder: Interactive Stories for Young Readers
+//         </h1>
+//         <a href="/#services-container">
+//           <button
+//             id="btn"
+//             className="mt-4 font-bold py-2 px-4 border border-activate rounded-lg"
+//           >
+//             EXPLORE
+//           </button>
+//         </a>
+//       </section>
+
+//       <section id="services-container" className="py-16">
+//         <h1 className="text-5xl font-bold text-center mb-12">Our Services</h1>
+//         <div id="services" className="flex justify-center flex-wrap">
+//           <div className="box border-2 rounded-xl m-5 p-6 max-w-md">
+//             <img
+//               src="https://ik.imagekit.io/SrinivasanRavi/Home/LittleInn/stories.webp"
+//               alt="LittleInn🪼"
+//               className="h-40 mx-auto rounded-md"
+//             />
+//             <h2 className="text-2xl font-semibold text-center mt-4">
+//               Stories
+//             </h2>
+//             <p className="text-center mt-2">
+//             Stories are narratives that entertain or convey messages through structured sequences of events.
+//              They often include characters, settings, plots, conflicts, and resolutions. 
+//              Whether fictional or non-fictional, stories serve to educate, entertain, and preserve cultural values across generations.
+//             </p>
+//           </div>
+//           <div className="box border-2 rounded-xl m-5 p-6 max-w-md">
+//             <img
+//               src="https://i.pinimg.com/564x/dd/4c/1e/dd4c1e9840e0da44edf37c4b821992dc.jpg"
+//               alt="CEO"
+//               className="h-40 mx-auto rounded-md"
+//             />
+//             <h2 className="text-2xl font-semibold text-center mt-4">Podcasts</h2>
+//             <p className="text-center mt-2">
+//             Compelling Narratives: Story podcasts should have well-crafted narratives that capture the listener’s attention. 
+//             This includes strong plots, engaging characters, and immersive settings that transport the audience into the story world.
+//             This emotional resonance keeps listeners invested in the story.
+//             </p>
+//           </div>
+//           <div className="box border-2 rounded-xl m-5 p-6 max-w-md">
+//             <img
+//               src="https://i.pinimg.com/564x/30/99/2e/30992e4a3ac37153cff94ac72a973945.jpg"
+//               alt="Products"
+//               className="h-40 mx-auto rounded-md"
+//             />
+//             <h2 className="text-2xl font-semibold text-center mt-4">
+//               Story Creation
+//             </h2>
+//             <p className="text-center mt-2">
+//             Everyone has a story worth sharing, and now it's easier than ever to let your voice be heard. 
+//             Our platform invites you to upload your unique tales, whether they're personal experiences, 
+//             fictional adventures, or insightful reflections.
+//             </p>
+//           </div>
+//         </div>
+//       </section>
+
+//       <section
+//         id="client-section"
+//         className="py-16 relative"
+//         style={{ backgroundImage: "url('../image/background2.jpg')" }}
+//       >
+//         <h1 className="text-5xl font-bold text-center mb-12">Tales</h1>
+//         <div className="container mx-auto p-6">
+//     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+//       {interviews.map((interview, index) => (
+//         <InterviewCard
+//           key={index}
+//           name={interview.name}
+//           title={interview.title}
+//           image={interview.image}
+//         />
+//       ))}
+//     </div>
+//   </div>
+//       </section>
+
+//       <section
+//         id="contact"
+//         className="py-16 relative"
+//         style={{ backgroundImage: "url('../image/contact.jpg')" }}
+//       >
+//         <h1 className="text-5xl font-bold text-center mb-12">Feedback</h1>
+//         <div id="contact-box" className="flex justify-center">
+//           <form action="" className="w-2/5 space-y-4">
+//             <div className="form-group">
+//               <label htmlFor="name" className="text-lg font-medium">
+//                 Name:
+//               </label>
+//               <input
+//                 type="text"
+//                 name="myname"
+//                 id="name"
+//                 placeholder="Enter Your Name:"
+//                 className="w-full p-2 border rounded"
+//               />
+//             </div>
+//             <div className="form-group">
+//               <label htmlFor="email" className="text-lg font-medium">
+//                 Email:
+//               </label>
+//               <input
+//                 type="email"
+//                 name="myemail"
+//                 id="email"
+//                 placeholder="Enter Your Email:"
+//                 className="w-full p-2 border rounded"
+//               />
+//             </div>
+//             <div className="form-group">
+//               <label htmlFor="phone" className="text-lg font-medium">
+//                 Phone Number:
+//               </label>
+//               <input
+//                 type="number"
+//                 name="number"
+//                 id="phone"
+//                 placeholder="Enter Your Phone Number:"
+//                 maxLength="10"
+//                 className="w-full p-2 border rounded"
+//               />
+//             </div>
+//             <div className="form-group">
+//               <label htmlFor="message" className="text-lg font-medium">
+//                 Message:
+//               </label>
+//               <textarea
+//                 name="Message"
+//                 id="message"
+//                 cols="30"
+//                 rows="10"
+//                 className="w-full p-2 border rounded"
+//               ></textarea>
+//             </div>
+//             <input
+//               type="submit"
+//               className="w-full bg-black text-white py-2 rounded-lg cursor-pointer"
+//             />
+//           </form>
+//         </div>
+//       </section>
+//     </>
+//   );
+// };
+
+// export default Home;
+
+
+import React from 'react';
+import WordFadeIn from "@/components/magicui/word-fade-in";
+
 const Home = () => {
-    return (
-
-<div>
-      <div class="animateme">
-      <ul class="bg-bubbles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-   </div> 
-   
-<div id="wrapper">
-  <nav>
-    <ul>
-      <li>
-        <a href="#me">About me</a>
-
-      </li>
-      <li>
-        <a href="#work">Noteworthy Pens</a>
-
-      </li>
-    </ul>
-  </nav>
-  <header>
-    {/* <img src="https://assets.codepen.io/6538694/internal/avatars/users/default.png?fit=crop&format=auto&height=512&width=512"/> */}
-    <h1>
-      <strong>HEy! <br />Welcome to FableMindzz </strong>
-
-    </h1>
-
-  </header>
-  <section id="me">
-    <h2><strong>About Us</strong></h2>
-    <article>
-
-<h3>
-Welcome to FableMindzz, your go-to interactive storytelling app that makes reading an adventure! We believe in the power of stories to inspire, educate, and foster a lifelong love of learning. At FableMindzz, we create immersive reading experiences with captivating visuals, engaging interactive elements, and heartfelt narrations. Our mission is to nurture young minds by offering a safe and enriching environment where every story plants seeds of knowledge, empathy, and wonder. Join us in sparking curiosity and igniting the joy of reading with FableMindzz, where every story opens up a world of possibilities.
-</h3>
-
-    </article>
-
-  </section>
-  <main>
-
-    <section id="work">
-      <h2><strong>Noteworthy Pens</strong></h2>
-      <article class="card">
-        <div class="card-header">
-          <img src="https://i.pinimg.com/474x/a2/a3/c4/a2a3c4972af766fb66210a636641db21.jpg" />
-        </div>
-        <div class="card-body">
-          <h3>Kids have access to a vast collection of books, from timeless classics to contemporary bestsellers, all in one convenient place. This enables them to easily discover and explore new books without the need to physically visit a library or bookstore.</h3>
-          
-        </div>
-      </article>
-      <article class="card">
-        <div class="card-header">
-          <img src="" />
-        </div>
-        <div class="card-body">
-          <h3>Title 2</h3>
-        PAGE2
-        </div>
-      </article>
-      <article class="card">
-        <div class="card-header">
-          <img src="" />
-        </div>
-        <div class="card-body">
-          <h3>Title 3</h3>
-         PAGE 3
-        </div>
-      </article>
-      <article class="card">
-        <div class="card-header">
-          <img src="" />
-        </div>
-        <div class="card-body">
-          <h3>TITLE 4</h3>
-          
-        </div>
-      </article>
-      <article class="card">
-        <div class="card-header">
-          <img src="https://shots.codepen.io/username/pen/poqqaGJ-512.jpg" />
-        </div>
-        <div class="card-body">
-          <h3><a href="https://codepen.io/Jazzzy92/full/poqqaGJ" target="_blank">Attack on Titan Landingpage</a></h3>
-          Landing Page for a Attack on Titan RPG-Forum. Just for fun, no project ongoing or intended, although I'd really like to. Looking forward for the series' finale ♥
-        </div>
-      </article>
-      <article class="card">
-
-        <div class="card-header">
-          <img src="https://shots.codepen.io/username/pen/OJrrNxa-512.jpg" />
-        </div>
-        <div class="card-body">
-          <h3><a href="https://codepen.io/Jazzzy92/full/OJrrNxa">Glassmorphism Calendar UI</a></h3>
-          I was inspired by a <a href="https://www.pinterest.de/pin/704180091762110326/" target="_blank">magnificent Calendar UI on Pinterest</a> and wanted to try one as well. I wish I could transform it into a live phone wallpaper. I love the color of the rose.
-        </div>
-
-      </article>
-      <article class="card">
-        <div class="card-header">
-          <img src="https://shots.codepen.io/username/pen/mdaexMW-512.jpg" />
-        </div>
-        <div class="card-body">
-          <h3><a href="https://codepen.io/Jazzzy92/full/mdaexMW" target="_blank">Funny Business Card</a></h3>
-          I wanted to experiment with pseudo-elements :before and :after. So I created a funny Business Card with a gradient ornament.
-        </div>
-
-      </article>
-      <article class="card">
-        <div class="card-header">
-          <img src="https://shots.codepen.io/username/pen/NWEqRqY-512.webp" />
-        </div>
-        <div class="card-body">
-          <h3><a href="https://codepen.io/Jazzzy92/full/NWEqRqY" target="_blank">Read more / Show less - Toggle</a></h3>
-          My first attempt of JQuery plus my first Codepen-Challenge. I might have missunderstood the requirements, though xD.
-        </div>
-      </article>
-      <article class="card">
-        <div class="card-header">
-          <img src="https://shots.codepen.io/username/pen/LYypbLr-512.webp" />
-        </div>
-        <div class="card-body">
-          <h3><a href="https://codepen.io/Jazzzy92/full/LYypbLr" target="_blank">Funny Forumbit</a></h3>
-          I recently try to focus on good UI, but sometimes I just want to do some fancy useless stuff. <br /><br /> Resize this Pen and see how the text in the boxes is always shortened to max. 2 lines.
-        </div>
-      </article>
-    </section>
-
-    <aside id="shortcuts">
-      <section>
-        <h3>Recent Pens</h3>
-        <article>
-          <h4><a href="https://codepen.io/Jazzzy92/full/JjqNpxr" target="_blank">Interactive Color Changer</a></h4>
-          <small class="ui"><a href="https://codepen.io/search/pens?q=ui">test-ui</a></small> <small class="misc"><a href="https://codepen.io/search/pens?q=javascript">javascript</a></small><small class="interactive"><a href="https://codepen.io/search/pens?q=interactive">interactive</a></small><br /><br />
-          <h4><a href="https://codepen.io/Jazzzy92/full/YzBgWGm" target="_blank">Fantasy RPG - Interactive Landing page</a></h4>
-          <small class="ui"><a href="https://codepen.io/search/pens?q=ui">dark-ui</a></small> <small class="misc"><a href="https://codepen.io/search/pens?q=jquery">jquery</a></small><small class="responsive"><a href="https://codepen.io/search/pens?q=auto-fit">auto-fit</a></small><br /><br />
-          <h4><a href="https://codepen.io/Jazzzy92/full/OJdEeKV" target="_blank">Motivational Phone Wallpaper</a></h4>
-          <small class="style"><a href="https://codepen.io/search/pens?q=glassmorphism" target="_blank">glassmorphism</a></small>
-          <small class="ui"><a href="https://codepen.io/search/pens?q=ui" target="_blank">mobile-ui</a></small>
-          <small class="misc"><a href="https://codepen.io/search/pens?q=aestetical" target="_blank">aestetical</a></small><br /><br />
-          <h4><a href="https://codepen.io/Jazzzy92/full/gOqKewE" target="_blank">Tell it to my ♥</a></h4><small class="ui"><a href="https://codepen.io/search/pens?q=light-ui" target="_blank">light-ui</a></small><small class="responsive"><a href="https://codepen.io/search/pens?q=container-query" target="_blank">container-query</a></small><small class="misc"><a href="https://codepen.io/search/pens?q=delicate" target="_blank">delicate</a></small><br /><br />
-          <h4><a href="https://codepen.io/Jazzzy92/full/ZEwryyj" target="_blank">Gaming-/Character-Profile</a></h4>
-          <small class="ui"><a href="https://codepen.io/search/pens?q=ui">dark-ui</a></small> <small class="style"><a href="https://codepen.io/search/pens?q=bento">bento</a></small><small class="misc"><a href="https://codepen.io/search/pens?q=mix-blend-mode">mix-blend-mode</a></small><br /><br />
-          <h4><a href="https://codepen.io/Jazzzy92/full/LYypbLr" target="_blank">Funny Forumbit (recycled)</a></h4>
-          <small class="misc">
-            <a href="https://codepen.io/search/pens?q=hover" target="_blank">hover</a>
-          </small>
-          <small class="responsive">
-            <a href="https://codepen.io/search/pens?q=line-clamp" target="_blank">line-clamp</a>
-          </small>
-          <small class="responsive">
-            <a href="https://codepen.io/search/pens?q=resizeable" target="_blank">resizeable</a>
-          </small><br /><br />
-          <h4><a href="https://codepen.io/Jazzzy92/full/oNmbJby" target="_blank">WIP NaNoWriMo-Tracker</a></h4>
-          <small class="style"><a href="https://codepen.io/search/pens?q=progressbar" target="_blank">progressbar</a></small>
-          <small class="misc"><a href="https://codepen.io/search/pens?q=JQuery" target="_blank">jquery</a></small>
-          <small class=""><a href="https://codepen.io/search/pens?q=input" target="_blank">input</a></small><br /><br />
-          <h4><a href="https://codepen.io/Jazzzy92/full/XWoQbqL" target="_blank">Character-Choice UI</a></h4>
-          <small class="ui">
-            <a href="https://codepen.io/search/pens?q=ui" target="_blank">game-ui</a>
-          </small>
-          <small class="responsive">
-            <a href="https://codepen.io/search/pens?q=responsive" target="_blank">responsive</a>
-          </small>
-          <small class="style">
-            <a href="https://codepen.io/search/pens?q=glassmorphism" target="_blank">glassmorphism</a>
-
-          </small><br /><br />
-          <h4><a href="https://codepen.io/Jazzzy92/full/poqqaGJ" target="_blank">Attack on Titan Landingpage</a></h4>
-          <small class="ui">
-            <a href="https://codepen.io/search/pens?q=ui" target="_blank">forum-ui</a>
-          </small>
-          <small>
-            <a href="https://codepen.io/search/pens?q=responsive" target="_blank">responsive</a>
-          </small>
-          <small class="misc">
-            <a href="https://codepen.io/search/pens?q=clip-path" target="_blank">clip-path</a>
-          </small><br /><br />
-          <h4><a href="https://codepen.io/Jazzzy92/full/OJrrNxa" target="_blank">Calendar Classmorphism</a></h4>
-          <small class="ui"> <a href="https://codepen.io/search/pens?q=calendar-ui" target="_blank">calendar-ui</a></small>
-          <small class="responsive"> <a href="https://codepen.io/search/pens?q=grid" target="_blank">grid</a></small>
-          <small class="style"> <a href="https://codepen.io/search/pens?q=glassmorphism" target="_blank">glassmorphism</a></small><br /><br />
-
-          <h4><a href="https://codepen.io/Jazzzy92/full/poqvzRK" target="_blank">Mobile Forum App- Index</a></h4>
-          <small class="ui"> <a href="https://codepen.io/search/pens?q=app-ui" target="_blank">app-ui</a></small>
-          <small class="responsive"> <a href="https://codepen.io/search/pens?q=mobile" target="_blank">mobile</a></small>
-          <small class="misc"> <a href="https://codepen.io/search/pens?q=tabs" target="_blank">tabs</a></small><br /><br />
-          <h4><a href="https://codepen.io/Jazzzy92/full/zYMVYMy" target="_blank">Dynamic color change via Color Picker-Part 2</a></h4>
-          <small class="misc"> <a href="https://codepen.io/search/pens?q=javascript" target="_blank">javascript</a></small>
-          <small class=""> <a href="https://codepen.io/search/pens?q=values" target="_blank">css-variable</a></small>
-          <small class=""> <a href="https://codepen.io/search/pens?q=input" target="_blank">input</a></small><br /><br />
-          <h4><a href="https://codepen.io/Jazzzy92/full/eYQXjwO" target="_blank">Dynamic color change via Color Picker-Part 1</a></h4>
-          <small class="misc"> <a href="https://codepen.io/search/pens?q=javascript" target="_blank">javascript</a></small>
-          <small class=""> <a href="https://codepen.io/search/pens?q=values" target="_blank">values</a></small>
-          <small class=""> <a href="https://codepen.io/search/pens?q=input" target="_blank">input</a></small><br /><br />
-          <h4><a href="https://codepen.io/your-work?cursor=ZD0wJm89MSZwPTEmdj03MDA0MTU2NA==" target="_blank">View all Pens</a></h4>
-        </article>
-      </section>
-      <section>
-        <h3>Plans & Projects</h3>
-        <article>
-          <ul>
-            <li><a href="https://codepen.io/Jazzzy92/full/OJrrNxa">Calendar UI</a> ✅</li>
-            <li>Game Profile UI</li>
-            <li>Scroll-Trigger</li>
-            <li><a href="https://codepen.io/collection/kNweJQ">"App-Like"-Skin</a> ✅ </li>
-            <li>3D-Animation</li>
-            <li>Automatic Activity-Counter (# of words + posting frequency)</li>
-            <li>Discord x Forum- Integration (Detailed + Personalized Webhook ?)</li>
-          </ul>
-        </article>
-      </section>
-    </aside>
-  </main>
-  <footer>
-    Thank you for Likes, Feedback, or a follow. I appreciate it!
-  </footer>
-</div>
-
-
-    
-   
+  const InterviewCard = ({ name, title, image, additionalInfo }) => (
+    <div className="relative rounded-lg shadow-lg overflow-hidden group">
+      <img src={image} alt={name} className="w-full h-48 object-cover" />
+      <div className="p-4">
+        <h3 className="text-lg font-semibold">{name}</h3>
+        <p className="text-gray-600">{title}</p>
+      </div>
+      {/* Overlay that appears on hover */}
+      <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+        <p className="text-white text-center px-4">{additionalInfo}</p>
+      </div>
     </div>
+  );
+
+  const interviews = [
+    {
+      name: 'Little Red Riding Hood',
+      title: 'Little Red Riding Hood is a European fairy tale about a young girl and a sly wolf.',
+      image: 'https://ik.imagekit.io/SrinivasanRavi/Home/LittleInn/Home-Tales/Little%20Red%20Riding%20Hood.webp',
+      additionalInfo: 'A classic tale about courage and cleverness in the face of danger.',
+    },
+    {
+      name: 'Beauty and the Beast',
+      title: 'Originating in France, this is the story of Belle, a beautiful peasant girl.',
+      image: 'https://ik.imagekit.io/SrinivasanRavi/Home/LittleInn/Home-Tales/Beauty%20and%20the%20Beast.jpg',
+      additionalInfo: 'A beautiful story about love and understanding beyond appearances.',
+    },
+    {
+      name: 'The Frog Prince',
+      title: 'The Frog Prince; or, Iron Henry" is a German fairy tale.',
+      image: 'https://ik.imagekit.io/SrinivasanRavi/Home/LittleInn/Home-Tales/The%20Frog%20Prince.jpg?updatedAt=1722176812593',
+      additionalInfo: 'A story of transformation and keeping promises.',
+    },
+    {
+      name: 'Cinderella',
+      title: '"Cinderella", or "The Little Glass Slipper", is a folk tale with thousands of variants.',
+      image: 'https://ik.imagekit.io/SrinivasanRavi/Home/LittleInn/Home-Tales/Cinderella.jpeg',
+      additionalInfo: 'A timeless tale of kindness and unexpected fortunes.',
+    },
+    {
+      name: 'Snow White',
+      title: '"Snow White" is a German fairy tale, first written down in the early 19th century.',
+      image: 'https://ik.imagekit.io/SrinivasanRavi/Home/LittleInn/Home-Tales/Snow%20White.webp',
+      additionalInfo: 'A tale of envy and innocence with a magical twist.',
+    },
+    {
+      name: 'Jack and the Beanstalk',
+      title: 'Jack and the Beanstalk" is an English fairy tale.',
+      image: 'https://ik.imagekit.io/SrinivasanRavi/Home/LittleInn/Home-Tales/Jack%20and%20the%20Beanstalk.jpg',
+      additionalInfo: 'A daring adventure of bravery and cleverness.',
+    },
+  ];
+
+  return (
+    <>
+      <hr></hr>
+      <section
+        id="home"
+        className="flex flex-col items-center justify-center py-12 relative h-screen w-screen bg-cover bg-center"
+        // style={{
+        //   backgroundImage:
+        //     "url('https://ik.imagekit.io/SrinivasanRavi/Home/LittleInn/LittleInn%20Home%20Bg.jpg?updatedAt=1722141348095')",
+        //   backgroundSize: "cover", 
+        //   backgroundPosition: "center",
+        // }}
+      >
+        <h1>FABLEMINDZ</h1>
+       
+        <br />
+        <h1 className="text-2xl text-center font-bold">
+        Where Stories Come Alive and Learning Begins!
+        </h1>
+        <a href="/#services-container">
+          <button
+      
+            id="btn"
+            className="mt-4 font-bold py-2 px-4 border border-activate rounded-lg"
+          >
+            EXPLORE
+          </button>
+        </a>
+      </section>
+      <section>
+      <div id="notification">
+        <h2>Verification Required</h2>
+        <form id="verification-form" action="submit_verification.php" method="POST">
+            <label>
+                <input type="checkbox" name="robot_verification" id="robot-checkbox" required/>
+                I am not a robot
+            </label>
+            <button type="submit">Continue</button>
+        </form>
+    </div>
+    </section>
+ 
+            <section>
+                <h2>Welcome to Interactive Storybooks & Education!</h2>
+                <p>At Interactive Storybooks & Education, we believe in the power of storytelling and learning through play. Our mission is to create engaging, educational, and interactive storybooks that captivate young minds and foster a love for reading and learning.</p>
+                <h3>Our Vision</h3>
+                <p>We envision a world where children are inspired to explore, learn, and grow through the magical world of stories. By combining technology with creativity, we strive to make education a delightful and immersive experience for children of all ages.</p>
+                <h3>What We Offer</h3>
+                <ul>
+                    <li><strong>Interactive Storybooks:</strong> Our storybooks come alive with animations, sound effects, and interactive elements that make reading an adventure.</li>
+                    <li><strong>Educational Content:</strong> We provide a range of educational resources, including games, activities, and lessons that complement our storybooks and enhance learning.</li>
+                    <li><strong>Safe and Engaging:</strong> All our content is designed to be child-friendly, ensuring a safe and engaging environment for young learners.</li>
+                </ul>
+                <h3>Our Team</h3>
+                <p>Our dedicated team of writers, illustrators, educators, and developers work tirelessly to create content that is not only fun but also educational. We are passionate about making a positive impact on children's education and helping them discover the joy of reading.</p>
+                <h3>Join Us on Our Journey</h3>
+                <p>We invite parents, educators, and children to join us on this exciting journey of discovery and learning. Together, we can unlock the potential of every child and nurture a lifelong love for reading and education.</p>
+            </section>
     
 
-    )
-}
+      
+    </>
+  );
+};
 
-export default Home
+export default Home;
